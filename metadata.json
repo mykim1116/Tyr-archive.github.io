@@ -1,0 +1,8 @@
+{
+  "name": "TYR Marine Portal and Booklet Library",
+  "description": "A high-performance technical brand page for TYR featuring an interactive white-blue dashboard design and a cascading vertical booklet library with pause-on-hover zoom-viewer screens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
