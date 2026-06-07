@@ -43,6 +43,7 @@ interface BookletDetailWindowProps {
 export default function BookletDetailWindow({ booklet, onClose }: BookletDetailWindowProps) {
   const [currentPage, setCurrentPage] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeLightboxImg, setActiveLightboxImg] = useState<string | null>(null);
 
   const handleMainScroll = (e: React.UIEvent<HTMLDivElement>) => {
     if (e.currentTarget.scrollTop > 305) {
@@ -57,7 +58,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
   const nextPage = () => {
     setCurrentPage(prev => Math.min(booklet.pages.length - 1, prev + 1));
   };
-  const [aliveTab, setAliveTab] = useState<'settings' | 'characters' | 'timeline' | 'novels' | 'cartoon' | 'mediamix'>('settings');
+  const [aliveTab, setAliveTab] = useState<'settings' | 'characters' | 'timeline' | 'novels' | 'cartoon' | 'comics' | 'mediamix'>('settings');
   const [aliveEpisode, setAliveEpisode] = useState<number>(0);
 
   const mainScrollRef = useRef<HTMLDivElement>(null);
@@ -71,8 +72,8 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
       sub: "소리굽쇠 동조식 // 기획 비주얼",
       desc: "라리스 아카데미아의 험준한 외벽 정벽. 공학 수리부엉이의 청각 수용체 동기화 및 무성음 영창 파동 [Tipon]의 신비로운 실체화를 묘사한 단편 필름. 칠흑투성이 밤하늘 속, 흩어지는 황금빛 마네 입자 연출을 극강의 프레임으로 가동합니다.",
       character: "라스 및 셰티르",
-      avatar: "/src/assets/images/las_concept_art_1780299769297.png",
-      coverImage: "/src/assets/images/las_concept_art_1780299769297.png",
+      avatar: "/src/assets/images/las_concept_art_1780826548721.png",
+      coverImage: "/src/assets/images/las_concept_art_1780826548721.png",
       isAmberTheme: true,
       duration: 15,
       subtitles: [
@@ -110,7 +111,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
       sub: "붉은 밀랍 인장 개봉 // 불가사의한 일화",
       desc: "붉은 실링 왁스로 견고하게 보호된 발송인 미상의 마법 서한. 밀동 해제되는 찰나, 심장을 관통하는 고열의 눈부신 빛과 함께 무중력 공간 부진 마법 [Tiamo]이 대폭발하는 명장면을 구현했습니다. 가구들과 주위 연동 공간들이 소리 없이 우주로 부상하는 초고화질 연출.",
       character: "라스 및 셰티르",
-      avatar: "/src/assets/images/las_concept_art_1780299769297.png",
+      avatar: "/src/assets/images/las_concept_art_1780826548721.png",
       coverImage: "/src/assets/images/tiamo_anime_shorts_3_1780485357041.png",
       isAmberTheme: true,
       duration: 15,
@@ -534,6 +535,19 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                 <Palette className="w-4 h-4" />
                 {isB2 ? '공식 숏폼 (SHORTS)' : '만화/일러스트 (COMIC)'}
               </button>
+              {isB2 && (
+                <button
+                  onClick={() => setAliveTab('comics')}
+                  className={`px-5 py-3 font-sans font-black text-[12px] uppercase tracking-wider flex items-center gap-2 border-b-2 transition duration-305 cursor-pointer ${
+                    aliveTab === 'comics' 
+                      ? accentBorderB 
+                      : 'border-transparent text-zinc-500 hover:text-zinc-800'
+                  }`}
+                >
+                  <Sparkles className="w-4 h-4 text-amber-500" />
+                  코믹스 (COMICS)
+                </button>
+              )}
             </div>
 
             {/* Tab Contents with animations */}
@@ -750,7 +764,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                             <div className="flex items-center gap-4">
                               <div className="w-14 h-14 rounded-full border-2 border-amber-300 overflow-hidden shrink-0 shadow-md">
                                 <img
-                                  src="/src/assets/images/las_concept_art_1780299769297.png"
+                                  src="/src/assets/images/las_concept_art_1780826548721.png"
                                   alt="Las Avatar"
                                   className="w-full h-full object-cover"
                                   referrerPolicy="no-referrer"
@@ -776,7 +790,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
 
                             <div className="mt-4 rounded-xl overflow-hidden aspect-[3/4] border border-amber-100 relative bg-zinc-50 shadow-xs flex items-center justify-center p-1">
                               <img
-                                src="/src/assets/images/las_concept_art_1780299769297.png"
+                                src="/src/assets/images/las_concept_art_1780826548721.png"
                                 alt="Las Concept Art"
                                 className="w-full h-full object-contain hover:scale-102 transition duration-550 ease-out"
                                 referrerPolicy="no-referrer"
@@ -1460,10 +1474,10 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                                   }}
                                   className="text-zinc-350 hover:text-white transition cursor-pointer"
                                 >
-                                  {isAudioMuted ? (
-                                    <VolumeX className="w-3.5 h-3.5 text-zinc-500" />
-                                  ) : (
+                                  {isPlaying ? (
                                     <Volume2 className="w-3.5 h-3.5 text-amber-400 animate-bounce" />
+                                  ) : (
+                                    <VolumeX className="w-3.5 h-3.5 text-zinc-500" />
                                   )}
                                 </button>
                                 <div className="flex gap-0.5 items-end justify-center h-4 px-1">
@@ -1487,7 +1501,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                             </div>
 
                             {/* Slider visual progress line */}
-                            <div className="h-1 bg-zinc-850 w-full relative z-10 shrink-0 select-none rounded-b-[30px] overflow-hidden">
+                            <div className="h-1 bg-zinc-850 w-full relative z-10 shrink-0 select-none rounded-[30px] overflow-hidden">
                               <div 
                                 className="h-full bg-gradient-to-r from-amber-500 to-orange-500 transition-all duration-150 ease-linear" 
                                 style={{ width: `${videoProgress}%` }}
@@ -1596,6 +1610,81 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                         </div>
                       </div>
                     )}
+                  </motion.div>
+                )}
+
+                {aliveTab === 'comics' && (
+                  <motion.div
+                    key="comics"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="max-w-5xl mx-auto pb-6 text-zinc-900 font-sans"
+                  >
+                    {/* Image grid featuring cards with beautiful captions */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                      {[
+                        {
+                          src: "/src/assets/images/las_concept_art_1780826548721.png",
+                          title: "#1 빠른 탈출"
+                        },
+                        {
+                          src: "",
+                          title: "(추가 예정)",
+                          isPlaceholder: true
+                        }
+                      ].map((item, index) => {
+                        if (item.isPlaceholder) {
+                          return (
+                            <div key={index} className="flex flex-col rounded-2xl border border-dashed border-zinc-250 bg-zinc-50/30 overflow-hidden group">
+                              <div className="aspect-[3/4] flex flex-col justify-center items-center text-center p-6">
+                                <BookOpen className="w-7 h-7 text-zinc-350 mb-2" />
+                                <span className="font-mono text-[9px] font-bold text-zinc-400 tracking-widest uppercase mb-1">
+                                  COMING SOON
+                                </span>
+                              </div>
+                              <div className="p-3 bg-zinc-50/50 border-t border-dashed border-zinc-200 text-center select-none">
+                                <span className="font-sans font-black text-xs md:text-sm text-zinc-400">
+                                  {item.title}
+                                </span>
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <motion.div
+                            key={index}
+                            whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                            onClick={() => setActiveLightboxImg(item.src)}
+                            className="bg-white rounded-2xl border border-zinc-200 overflow-hidden cursor-pointer hover:border-amber-400 hover:shadow-lg transition-all duration-300 flex flex-col group"
+                          >
+                            {/* Image Box - Pure Visual Asset */}
+                            <div className="aspect-[3/4] bg-zinc-50 relative overflow-hidden flex items-center justify-center p-1.5">
+                              <img
+                                src={item.src}
+                                alt={item.title}
+                                className="w-full h-full object-cover rounded-xl group-hover:scale-103 transition-transform duration-500 ease-out"
+                                referrerPolicy="no-referrer"
+                              />
+                              <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                                <span className="bg-amber-500 text-zinc-950 px-3.5 py-1.5 rounded-full text-xs font-sans font-black flex items-center gap-1.5 shadow-md">
+                                  <Sparkles className="w-3.5 h-3.5 text-zinc-950 fill-current" /> 완전히 크게 보기
+                                </span>
+                              </div>
+                            </div>
+                            
+                            {/* Symmetric minimal title bottom rail */}
+                            <div className="p-3 bg-white border-t border-zinc-150 text-center transition-colors duration-350">
+                              <span className="font-sans font-black text-xs md:text-sm text-zinc-800 group-hover:text-amber-850 transition-colors">
+                                {item.title}
+                              </span>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
                   </motion.div>
                 )}
 
@@ -2856,6 +2945,48 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
           >
             <ArrowUp className="w-5 h-5 group-hover:-translate-y-0.5 transition duration-300" />
           </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Image Lightbox Modal */}
+      <AnimatePresence>
+        {activeLightboxImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveLightboxImg(null)}
+            className="fixed inset-0 bg-zinc-950/95 backdrop-blur-md z-[99999] flex items-center justify-center p-4 sm:p-8 cursor-zoom-out select-none"
+            style={{ zIndex: 99999 }}
+          >
+            {/* Close Button Top-right */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveLightboxImg(null);
+              }}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/10 text-white rounded-full p-2.5 sm:p-3 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all cursor-pointer z-50 border border-white/15 flex items-center justify-center shadow-lg"
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            {/* Main picture display area with smooth motion spring */}
+            <motion.div
+              initial={{ scale: 0.93, y: 15 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.93, y: 15 }}
+              transition={{ type: "spring", damping: 25, stiffness: 220 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-full max-h-[85vh] md:max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
+            >
+              <img
+                src={activeLightboxImg}
+                alt="Enlarged Poster Artwork"
+                className="max-w-full max-h-[80vh] md:max-h-[88vh] object-contain rounded-xl cursor-default border border-white/10"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.div>
