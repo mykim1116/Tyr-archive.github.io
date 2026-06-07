@@ -21,11 +21,13 @@ const getJapaneseSubtitle = (text: string): string => {
     "셰티르: '편지를 발송한 사람을 마주하는 그 날까지, 이 날갯짓의 울림은 멈추지 않아요.'": 'セティル「手紙を発送した人に出会うその日まで、この羽ばたきの響きは止まりません。」',
 
     // b2-v3 subtitles
-    "셰티르: '서한의 봉인면... 발송인의 실체를 입증하는 가문 문장이 전혀 없어.'": 'セティル「書簡の封印面…差出人の実体を立証する家紋が全くない。」',
-    "라스: '조심해, 셰티르! 편지가 네 마네 주파수와 맞물려 공명하고 있어!'": 'ラス「気をつけて、セティル！手紙が君のマナの周波数と噛み合って共鳴している！」',
-    "시스템: '봉인 마법 [Tiamo] 공간 왜곡 시동. 연동 고유 질량의 물리 해제 시작.'": 'システム「封印魔法【ティアモ】空間歪曲始動。連動固有質量の物理解除開始。」',
-    "라스: '가구들과 장식들이 눈부신 황금빛 은하의 편린처럼 부유하고 있어!'": 'ラス「家具や装飾が眩しい黄金の銀河の片鱗のように浮遊している！」',
-    "셰티르: '이 타오르는 은빛 광채는... 가변지대 너머 발송인을 찾는 영원한 이정표군요.'": 'セティル「この燃え盛る銀色の光彩は…可変地帯の向こう의差出人を探す永遠の道標ですね。」',
+    '마코: "이트니르, 수리부엉이 셰티르의 잔류 주파수가 사방으로 흩어져서 잡히고 있어!"': 'マコ「イトニル、ミミズク（セティル）の残留周波数が四方に拡散して探知されているよ！」', // の封印面…差出人の実体を立証する家紋が全くない。」',
+    '이트니르: "내 공방 근방에 아카데미아 경비대가 감지됐군. 여긴 내가 검강으로 수호하지."': 'イトニル「我が工房の付近にアカデミア警備隊が感知されたな。ここは俺が剣気で守護しよう。」',
+    '마코: "마코 가문의 하이컴 비화 전송 기전 가동! 무전 차단장 [Cometail] 전개 완료!"': 'マコ「マコ家のハイコム秘話伝送機電稼働！通信遮断場【コメテール】展開完了！」',
+    '시스템: "경비대 무선 통신 두절 검출. 가변 전파 격리를 통한 위상 왜곡 성공."': 'システム「警備隊の無線通信遮断を検出。可変電波隔離による位相歪曲成功。」',
+    '이트니르: "좋아, 마코! 셰티르 일행이 도망갈 시간은 충분히 벌어준 것 같군."': 'イトニル「上出来だ、マコ！セティルたちが逃げる時間は十分に稼げたようだな。」',
+    '마코: "후후, 소꿉친구 수호 임무 1단계 완료! 보상으로 과일주 한 상자 킵해둘게!"': 'マコ「ふふ、幼馴染守護任務第1段階完了！報酬に果実酒一箱キープしておくね！」',
+    // ル「この燃え盛る銀色の光彩は…可変地帯の向こう의差出人を探す永遠の道標ですね。」',
 
     // b3-v1 subtitles
     '에티야: "루미나, 우리 비상식량 캔은 어디 있어?"': 'エティヤ「ルミナ、私たちの非常食缶はどこ？」',
@@ -118,20 +120,21 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
     },
     {
       id: "b2-v3",
-      title: "스페셜 숏폼 | 발송자 표시 제한 - 공명 ✉️",
-      sub: "붉은 밀랍 인장 분해 // 운명적 결투",
-      desc: "수수께끼의 붉은 왁스 실링이 해제되는 찰나, 차원을 뚫는 무중력 마법 [Tiamo]의 공명 시퀀스. 공중에 부유하기 시작한 가구들과 장식들의 웅장한 가변 음향과 요동치는 주파수를 타고 맞물리는 라스와 셰티르의 전율적인 만남.",
-      character: "라스 및 셰티르",
-      avatar: "/src/assets/images/las_concept_art_1780826548721.png",
-      coverImage: "/src/assets/images/tiamo_anime_shorts_3_1780485357041.png",
+      title: "스페셜 숏폼 | 마코 & 이트니르 - 차단 격전 ⚔️",
+      sub: "아일라스 공방 // 소리굽쇠 비공식 기전",
+      desc: "라리스 아카데미아 외각 아일라스 공방. 수리부엉이의 공명을 숨겨주기 위해, 은가른 검강 기술을 개방해 날아드는 마도 탄환들을 격파하는 이트니르와, 마코 가문의 비밀 음향 보호진으로 아카데미아 경비대의 무전 신호를 차단하는 마코의 조용한 공조 숏필름!",
+      character: "마코 및 이트니르",
+      avatar: "/src/assets/images/derived_character_narrative_1780578701719.png",
+      coverImage: "/src/assets/images/derived_character_narrative_1780578701719.png",
       isAmberTheme: true,
       duration: 15,
       subtitles: [
-        { time: 0, text: "셰티르: '서한의 봉인면... 발송인의 실체를 입증하는 가문 문장이 전혀 없어.'", speaker: "셰티르" },
-        { time: 3, text: "라스: '조심해, 셰티르! 편지가 네 마네 주파수와 맞물려 공명하고 있어!'", speaker: "라스" },
-        { time: 6, text: "시스템: '봉인 마법 [Tiamo] 공간 왜곡 시동. 연동 고유 질량의 물리 해제 시작.'", speaker: "시스템" },
-        { time: 9, text: "라스: '가구들과 장식들이 눈부신 황금빛 은하의 편린처럼 부유하고 있어!'", speaker: "라스" },
-        { time: 12, text: "셰티르: '이 타오르는 은빛 광채는... 가변지대 너머 발송인을 찾는 영원한 이정표군요.'", speaker: "셰티르" }
+        { time: 0, text: '마코: "이트니르, 수리부엉이 셰티르의 잔류 주파수가 사방으로 흩어져서 잡히고 있어!"', speaker: "마코" },
+        { time: 3, text: '이트니르: "내 공방 근방에 아카데미아 경비대가 감지됐군. 여긴 내가 검강으로 수호하지."', speaker: "이트니르" },
+        { time: 6, text: '마코: "마코 가문의 하이컴 비화 전송 기전 가동! 무전 차단장 [Cometail] 전개 완료!"', speaker: "마코" },
+        { time: 9, text: '시스템: "경비대 무선 통신 두절 검출. 가변 전파 격리를 통한 위상 왜곡 성공."', speaker: "시스템" },
+        { time: 12, text: '이트니르: "좋아, 마코! 셰티르 일행이 도망갈 시간은 충분히 벌어준 것 같군."', speaker: "이트니르" },
+        { time: 15, text: '마코: "후후, 소꿉친구 수호 임무 1단계 완료! 보상으로 과일주 한 상자 킵해둘게!"', speaker: "마코" }
       ],
       initialComments: []
     }
@@ -728,7 +731,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                               <div className="w-14 h-14 rounded-full border-2 border-amber-300 overflow-hidden shrink-0 shadow-md">
                                 <img
                                   src="/src/assets/images/shetyr_cover_art_1780299676615.png"
-                                  alt="Shetyr Avatar"
+                                  alt="Cietyr Avatar"
                                   className="w-full h-full object-cover"
                                   referrerPolicy="no-referrer"
                                 />
@@ -738,7 +741,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                                   <span className="font-mono text-[9px] font-black px-2 py-0.5 rounded bg-amber-100 text-amber-805 uppercase">Light Chosen</span>
                                   <span className="font-mono text-[9px] font-black px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 uppercase">Eurasian Eagle-Owl</span>
                                 </div>
-                                <h3 className="font-sans font-black text-xl text-zinc-950 mt-1">셰티르 (Shetyr)</h3>
+                                <h3 className="font-sans font-black text-xl text-zinc-950 mt-1">셰티르 (Cietyr)</h3>
                               </div>
                             </div>
 
@@ -754,7 +757,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                             <div className="mt-4 rounded-xl overflow-hidden aspect-[3/4] border border-amber-100 relative bg-zinc-50 shadow-xs flex items-center justify-center p-1">
                               <img
                                 src="/src/assets/images/shetyr_cover_art_1780299676615.png"
-                                alt="Shetyr Concept Art"
+                                alt="Cietyr Concept Art"
                                 className="w-full h-full object-contain hover:scale-102 transition duration-550 ease-out"
                                 referrerPolicy="no-referrer"
                               />
@@ -924,19 +927,19 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                       {isB2 ? (
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-zinc-750">
                           <div className="p-4 rounded-xl bg-white border border-zinc-150 space-y-2">
-                            <h5 className="font-sans font-black text-sm text-zinc-900">모어 이트니르 (More Uitnir)</h5>
+                            <h5 className="font-sans font-black text-sm text-zinc-900">모어 이트니르 (Mor Uitnir)</h5>
                             <p className="font-sans text-xs leading-relaxed text-zinc-650 font-normal">
                               대장장이 명인의 피를 이어받은 아카데미아 학우. 마네 재능 고갈로 상심했으나, 훗날 마법 자체를 일도양단하는 은가른 귀족 검강 기술을 연마해 셰티르의 전술 연대를 돕습니다.
                             </p>
                           </div>
                           <div className="p-4 rounded-xl bg-white border border-zinc-150 space-y-2">
-                            <h5 className="font-sans font-black text-sm text-zinc-900">마코 테레피스 (Maco Terepeace)</h5>
+                            <h5 className="font-sans font-black text-sm text-zinc-900">마코 테레피스 (Mecot Terapeace)</h5>
                             <p className="font-sans text-xs leading-relaxed text-zinc-650 font-normal">
                               마코 성가 가문의 총화 자제이자 셰티르의 소꿉친구. 호화로운 상위 전공 위압을 기피하고 자유를 선언한 학도로, 주인공의 빛 성각 조사를 뒤쪽에서 든든하게 보호해 주는 중심축.
                             </p>
                           </div>
                           <div className="p-4 rounded-xl bg-white border border-zinc-150 space-y-2">
-                            <h5 className="font-sans font-black text-sm text-zinc-900">마코 카벨리아 (Maco Cavelia)</h5>
+                            <h5 className="font-sans font-black text-sm text-zinc-900">마코 카벨리아 (Mecot Caebelluia)</h5>
                             <p className="font-sans text-xs leading-relaxed text-zinc-650 font-normal">
                               테레의 장녀이자 기사단 코마테일의 영도자. 전체 토너먼트 리그 23위에 기염을 토하는 속도전 기합의 토끼 기인으로, 대결 상대의 검격을 유려하게 흘려 타격하는 회피 극단 검사.
                             </p>
