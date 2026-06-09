@@ -13,6 +13,7 @@ export interface Booklet {
     title: string;
     content: string;
     imagePlaceholder?: string;
+    image?: string;
   }[];
   specifications: {
     label: string;

@@ -85,8 +85,8 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
       sub: "인과율 예측식 // 신출귀몰 외벽 기전",
       desc: "라리스 아카데미아의 가려진 고층 외벽. 정문 돌파 대신 소리굽쇠 마도 장치만 움켜쥔 채 창문을 깨고 허공으로 탄성을 지르며 뛰어내리는 여우 인수 라스의 거침없고 쿨한 돌발 탈출 쇼츠! 수리부엉이의 궤적을 뚫는 기발한 활약상입니다.",
       character: "라스 및 셰티르",
-      avatar: "/src/assets/images/las_concept_art_1780826548721.png",
-      coverImage: "/src/assets/images/las_concept_art_1780826548721.png",
+      avatar: "/src/assets/images/b2_shorts_thumb_1780978616473.png",
+      coverImage: "/src/assets/images/b2_shorts_thumb_1780978616473.png",
       isAmberTheme: true,
       duration: 15,
       subtitles: [
@@ -778,7 +778,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                             <div className="flex items-center gap-4">
                               <div className="w-14 h-14 rounded-full border-2 border-amber-300 overflow-hidden shrink-0 shadow-md">
                                 <img
-                                  src="/src/assets/images/las_concept_art_1780826548721.png"
+                                  src="/src/assets/images/las_illustration_1780978603565.png"
                                   alt="Las Avatar"
                                   className="w-full h-full object-cover"
                                   referrerPolicy="no-referrer"
@@ -804,7 +804,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
 
                             <div className="mt-4 rounded-xl overflow-hidden aspect-[3/4] border border-amber-100 relative bg-zinc-50 shadow-xs flex items-center justify-center p-1">
                               <img
-                                src="/src/assets/images/las_concept_art_1780826548721.png"
+                                src="/src/assets/images/las_illustration_1780978603565.png"
                                 alt="Las Concept Art"
                                 className="w-full h-full object-contain hover:scale-102 transition duration-550 ease-out"
                                 referrerPolicy="no-referrer"
@@ -1572,53 +1572,78 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-rose-50 border border-rose-200 text-rose-800 rounded-md text-[10px] font-mono font-black uppercase tracking-wider">
                               공식 4컷 웹툰 // 에브리데이 어라이브
                             </span>
-                            <h3 className="font-sans font-black text-xl text-zinc-950 mt-1">4컷 명랑 만화: "콰직! 판금 갑옷의 괴력 소동"</h3>
+                            <h3 className="font-sans font-black text-xl text-zinc-950 mt-1">4컷 명랑 만화: "기대의 배신! 고양이 붕어빵의 텅 빈 비밀"</h3>
                             <p className="font-sans text-xs sm:text-sm text-zinc-550 leading-relaxed font-light mt-0.5">
-                              품위 넘치는 황실 드레스를 입은 채 배고픔에 굶주린 에티야 공주와, 정교한 은백색 판금 아머를 걸친 츤데레 설표 기사 루미나의 엉뚱하고 귀여운 중세 비상 공급 소동극입니다.
+                              길거리에서 소문난 명물인 '고양이 붕어빵'의 귀여운 모습에 홀려 특별한 앙금이나 비법 크림이 담겨있을 것이라 기대했던 에티야와 루미나. 하지만 반으로 쭉 갈라본 순간, 팥소조차 없이 완벽하게 비어 있는 반죽뿐인 현실을 맞닥뜨리는 유쾌한 일상 소동극입니다.
                             </p>
                           </div>
                           <div className="text-[10px] font-mono text-zinc-400 border border-zinc-200 rounded-lg px-3 py-1.5 bg-zinc-50 shrink-0 select-none">
-                            웹툰 번호: <span className="font-bold text-rose-700">ALIVE_SD_C1</span>
+                            웹툰 번호: <span className="font-bold text-rose-700">ALIVE_CAT_B1</span>
                           </div>
                         </div>
 
                         {/* Comic panel container */}
-                        <div className="relative rounded-2xl overflow-hidden border border-zinc-300 bg-zinc-50 group shadow-md max-w-3xl mx-auto flex items-center justify-center p-2 min-h-[350px]">
+                        <div 
+                          className="relative rounded-2xl overflow-hidden border border-zinc-300 bg-zinc-950 group shadow-lg max-w-3xl mx-auto flex items-center justify-center p-3 md:p-4 min-h-[350px] cursor-zoom-in transition-all duration-300 hover:border-rose-400 hover:shadow-xl"
+                          onClick={() => setActiveLightboxImg("/src/assets/images/alive_comic_medieval_korean_1780244902783.png")}
+                        >
                           <img 
                             src="/src/assets/images/alive_comic_medieval_korean_1780244902783.png" 
                             alt="Alive Cartoon" 
                             className="max-h-[500px] md:max-h-[700px] w-auto max-w-full object-contain group-hover:scale-[1.015] transition duration-700 ease-out"
                             referrerPolicy="no-referrer"
                           />
-                          
-                          <div className="absolute top-4 left-4 bg-zinc-950/85 backdrop-blur-xs border border-zinc-700/60 p-3 rounded-lg text-white max-w-xs font-sans text-xs leading-relaxed font-light shadow-md hidden sm:block">
-                            <span className="block font-sans font-black text-rose-350 text-[10px] tracking-wider mb-1 select-none">📢 일상 설정</span>
-                            “야수의 괴력을 조절하지 못한 기사의 비상식량 파쇄법!”
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                            <span className="opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 bg-rose-600/90 text-white text-xs px-3.5 py-1.5 rounded-full font-black tracking-tight backdrop-blur-xs transition-all duration-300 flex items-center gap-1.5 shadow-md">
+                              🔍 클릭하여 원본 크기로 확대 보기
+                            </span>
                           </div>
-                          
-                          <div className="absolute bottom-4 right-4 bg-rose-950/90 backdrop-blur-xs border border-rose-500/30 p-3 rounded-xl text-white max-w-xs font-sans text-xs leading-relaxed font-light shadow-lg">
-                            <span className="block font-sans font-black text-rose-350 text-[10px] tracking-wider mb-1 select-none">💬 에티야 (Etiya)</span>
-                            “루미나... 캔을 그렇게 박살 내놓으면 우린 뭘 어떻게 먹으라는 거야...?”
+                        </div>
+
+                        {/* Character speaking commentary board */}
+                        <div className="max-w-3xl mx-auto space-y-4 mt-6">
+                          <div className="flex items-center gap-2 border-b border-rose-100 pb-2 mb-4">
+                            <span className="text-sm">🎬</span>
+                            <h4 className="font-sans font-black text-sm text-zinc-900 tracking-tight">4컷 만화 애프터 라이브 코멘터리 극장</h4>
+                            <span className="ml-auto text-[9px] font-mono text-zinc-400 capitalize">Alive: Special Session</span>
                           </div>
 
-                          <div className="absolute bottom-4 left-4 bg-zinc-950/85 backdrop-blur-xs border border-zinc-700/60 p-2 rounded-md text-white text-[9px] font-mono leading-none flex items-center gap-1.5 select-none font-bold text-rose-300">
-                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-                            <span>스핀오프 일상 극장</span>
+                          <div className="space-y-4">
+                            {/* Etiya First Dialogue */}
+                            <div className="flex items-start gap-3 md:gap-4 group">
+                              <div className="w-12 h-12 rounded-xl overflow-hidden border border-rose-200 shrink-0 bg-rose-50 shadow-xs">
+                                <img 
+                                  src="/src/assets/images/etiya_lightnovel_1780244566911.png" 
+                                  alt="Etiya Avatar" 
+                                  className="w-full h-full object-cover"
+                                  referrerPolicy="no-referrer"
+                                />
+                              </div>
+                              <div className="relative flex-1 bg-white border border-rose-100 p-4 rounded-2xl rounded-tl-none shadow-xs group-hover:border-rose-300 transition duration-300">
+                                <div className="flex items-center gap-1.5 mb-1.5">
+                                  <span className="font-sans font-black text-xs text-rose-700 tracking-tight">에티야 (Etiya)</span>
+                                  <span className="text-[9px] font-mono font-bold bg-rose-50 text-rose-600 px-1.5 py-0.5 rounded uppercase tracking-wider">황실 후계자 // 극심한 허탈함</span>
+                                </div>
+                                <p className="font-sans text-xs sm:text-sm text-zinc-750 leading-relaxed font-light">
+                                  “루미나... 분명 고양이 모양 붕어빵이라고 해서 꼬리 끝까지 특별하고 진귀한 신묘한 맛이 꽉 차 있을 거라 했는데... 어째서 안에는 팥 한 톨 없이 시커먼 공기만 가득한 거야...?”
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
 
                         {/* Detail metadata row */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                           <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200">
-                            <span className="block font-sans font-black text-xs text-zinc-900">클래식 중세 일러스트풍 (Classic Medieval Style)</span>
+                            <span className="block font-sans font-black text-xs text-zinc-900">귀여운 비주얼 속 허탈한 풍자 (Cute Visuals & Empty Reality)</span>
                             <p className="font-sans text-xs leading-relaxed text-zinc-650 mt-1 font-light">
-                              에티야의 등황색 띠를 두른 순백 귀와 수려한 드레스, 그리고 루미나의 완벽히 재현된 풀 플레이트 판금 갑바 복식이 미학적으로 융합된 고품격 4컷 비주얼입니다.
+                              겉모습은 사랑스럽고 귀여운 고양이 형상이지만, 정작 속은 팥조차 덜 들어가 텅 비어버린 붕어빵을 갈라보고 허탈해하는 기사와 옹주의 귀여운 조화가 미학을 이룹니다.
                             </p>
                           </div>
                           <div className="p-4 rounded-xl bg-teal-50/50 border border-teal-100">
-                            <span className="block font-sans font-black text-xs text-teal-950">스토리 설정과의 정밀한 동기화 (Perfect Lore Sync)</span>
+                            <span className="block font-sans font-black text-xs text-teal-950">스토리 설정과의 미학적 대비 (Lore Contrast)</span>
                             <p className="font-sans text-xs leading-relaxed text-zinc-750 mt-1 font-light">
-                              황실 가문 생존자로서의 시니컬함이 묻어나는 에티야 공주와, 부끄러운 표정으로 땀을 흘리는 전설의 설표 전사 기사단장 루미나의 기막힌 케미스트리를 중세 개그물로 절묘하게 담았습니다.
+                              진중한 호위무사이자 기사단장인 루미나가 장수처럼 비장한 태도로 고양이 붕어빵을 정밀 절단했으나, 정작 수확이 전혀 없이 껍데기만 남아 망연자실한 표정을 코믹하게 연출했습니다.
                             </p>
                           </div>
                         </div>
@@ -1640,7 +1665,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                       {[
                         {
-                          src: "/src/assets/images/las_concept_art_1780826548721.png",
+                          src: "/src/assets/images/b2_comics_vol1_1780978589684.png",
                           title: "#1 빠른 탈출"
                         },
                         {
@@ -2842,7 +2867,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
             <div className="flex-1 my-6 sm:my-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch overflow-hidden min-h-0">
               
               {/* Left partition: Booklet Cover Image */}
-              <div className="md:col-span-5 flex flex-col justify-center bg-zinc-50 border border-zinc-100 rounded-2xl p-6 relative overflow-hidden shadow-sm">
+              <div className="md:col-span-4 flex flex-col justify-center bg-zinc-50 border border-zinc-100 rounded-2xl p-6 relative overflow-hidden shadow-sm">
                 {booklet.image ? (
                   <img 
                     src={booklet.image} 
@@ -2865,7 +2890,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
               </div>
 
               {/* Right partition: Live reading page contents with pristine layout */}
-              <div className="md:col-span-7 flex flex-col justify-between border-l border-zinc-100 pl-0 md:pl-8 relative min-h-[300px]">
+              <div className="md:col-span-8 flex flex-col justify-between border-l border-zinc-100 pl-0 md:pl-8 relative min-h-[400px] flex-1">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentPage}
@@ -2875,19 +2900,29 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                     transition={{ duration: 0.25 }}
                     className="flex-1 flex flex-col justify-between min-h-0"
                   >
-                    <div className="space-y-4">
-                      <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
-                      <h3 className="font-sans font-black text-lg sm:text-xl text-zinc-900 border-b border-zinc-100 pb-2 leading-tight tracking-tight uppercase">
+                    <div className="space-y-4 flex-1 flex flex-col min-h-0">
+                      <div className="w-12 h-1 bg-blue-600 rounded-full shrink-0"></div>
+                      <h3 className="font-sans font-black text-lg sm:text-xl text-zinc-900 border-b border-zinc-100 pb-2 leading-tight tracking-tight uppercase shrink-0">
                         {booklet.pages[currentPage].title}
                       </h3>
                       
-                      <p className="font-sans text-xs sm:text-sm text-zinc-600 leading-relaxed font-light whitespace-pre-wrap max-h-[200px] overflow-y-auto pr-2">
+                      <div className="font-sans text-xs sm:text-sm text-zinc-700 leading-relaxed font-light whitespace-pre-wrap bg-zinc-50 border border-zinc-150 rounded-2xl p-6 flex-1 overflow-y-auto shadow-inner min-h-[300px] md:min-h-[420px] max-h-[550px] pr-4">
+                        {booklet.pages[currentPage].image && (
+                          <div className="mb-6 overflow-hidden rounded-xl border border-zinc-200/80 shadow-sm max-h-[320px] bg-white">
+                            <img 
+                              src={booklet.pages[currentPage].image} 
+                              alt={booklet.pages[currentPage].title} 
+                              className="w-full h-full object-cover select-none"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                        )}
                         {booklet.pages[currentPage].content}
-                      </p>
+                      </div>
                     </div>
 
                     {/* Technical specifications checklist */}
-                    <div className="mt-6 pt-4 border-t border-zinc-100">
+                    <div className="mt-6 pt-4 border-t border-zinc-100 shrink-0">
                       <span className="block font-mono text-[9px] text-zinc-400 tracking-widest uppercase mb-2 font-black">
                         Technical Specifications
                       </span>

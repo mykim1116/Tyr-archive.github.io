@@ -26,6 +26,7 @@ export default function SidebarMenu({
   const quickBooks = [
     { id: 'b1', title: '분석', code: 'TYR-WHO' },
     { id: 'b2', title: '발송자 표시 제한', code: 'TYR-COM' },
+    { id: 'b5', title: '교차로', code: 'TYR-CRT' },
     { id: 'b3', title: 'Alive', code: 'TYR-CHA' },
     { id: 'b4', title: '기반 캐릭터', code: 'TYR-MED' },
   ];

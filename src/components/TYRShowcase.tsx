@@ -188,10 +188,10 @@ export default function TYRShowcase({ products, ambientTemp }: TYRShowcaseProps)
                       <span className="text-white font-black select-text">myan1116@gmail.com</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-zinc-500 font-bold">GITHUB:</span>
-                      <a href="https://github.com/about-kkh" target="_blank" rel="noopener noreferrer" className="text-blue-400 font-black hover:underline flex items-center gap-1.5">
-                        github.com/about-kkh
-                        <ArrowUpRight className="w-4 h-4 text-blue-500" />
+                      <span className="text-zinc-500 font-bold">YOUTUBE:</span>
+                      <a href="https://www.youtube.com/@Tyr0605" target="_blank" rel="noopener noreferrer" className="text-rose-550 font-black hover:underline flex items-center gap-1.5">
+                        @Tyr0605
+                        <ArrowUpRight className="w-4 h-4 text-rose-500" />
                       </a>
                     </div>
                     
