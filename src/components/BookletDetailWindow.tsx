@@ -187,6 +187,7 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
   const isB2 = booklet.id === 'b2';
   const isB3 = booklet.id === 'b3';
   const isB4 = booklet.id === 'b4';
+  const isB5 = booklet.id === 'b5';
   const isStoryBooklet = isB2 || isB3;
 
   const videosList = isB2 ? b2Videos : b3Videos;
@@ -288,7 +289,11 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
 
         {/* 75% Scale matching the booklet waterfalls title font size */}
         <h3 
-          className="font-sans font-black text-base sm:text-xl md:text-2xl lg:text-[25px] text-white tracking-widest text-center uppercase whitespace-nowrap select-none px-1"
+          className={`font-sans font-black text-center uppercase whitespace-nowrap select-none px-1 tracking-widest transition-colors duration-300 ${
+            isB5 
+              ? 'text-lg sm:text-2xl md:text-3xl lg:text-[32.5px] text-amber-300 font-black' 
+              : 'text-base sm:text-xl md:text-2xl lg:text-[25px] text-white'
+          }`}
           style={{ writingMode: 'vertical-rl' }}
         >
           {booklet.title}
@@ -2879,11 +2884,11 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                   <div className="w-full h-48 bg-zinc-200 rounded-xl animate-pulse" />
                 )}
 
-                <div className="mt-5 space-y-1.5">
-                  <h4 className="font-sans font-black text-sm text-zinc-800 tracking-tight leading-tight uppercase">
+                <div className="mt-5 space-y-2">
+                  <h4 className={`font-sans font-black tracking-tight leading-tight uppercase transition-all duration-300 ${isB5 ? 'text-[18px] sm:text-[20px] text-amber-600' : 'text-sm text-zinc-800'}`}>
                     {booklet.subtitle}
                   </h4>
-                  <p className="font-sans text-[11px] text-zinc-400 font-light leading-relaxed">
+                  <p className={`font-sans transition-all duration-300 leading-relaxed ${isB5 ? 'text-[14px] sm:text-[15px] font-normal text-zinc-600' : 'text-[11px] font-light text-zinc-400'}`}>
                     {booklet.description}
                   </p>
                 </div>
@@ -2902,11 +2907,11 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
                   >
                     <div className="space-y-4 flex-1 flex flex-col min-h-0">
                       <div className="w-12 h-1 bg-blue-600 rounded-full shrink-0"></div>
-                      <h3 className="font-sans font-black text-lg sm:text-xl text-zinc-900 border-b border-zinc-100 pb-2 leading-tight tracking-tight uppercase shrink-0">
+                      <h3 className={`font-sans font-black border-b border-zinc-100 pb-2 leading-tight tracking-tight uppercase shrink-0 transition-all duration-300 ${isB5 ? 'text-[23px] sm:text-[26.5px] text-amber-600' : 'text-lg sm:text-xl text-zinc-900'}`}>
                         {booklet.pages[currentPage].title}
                       </h3>
                       
-                      <div className="font-sans text-xs sm:text-sm text-zinc-700 leading-relaxed font-light whitespace-pre-wrap bg-zinc-50 border border-zinc-150 rounded-2xl p-6 flex-1 overflow-y-auto shadow-inner min-h-[300px] md:min-h-[420px] max-h-[550px] pr-4">
+                      <div className={`font-sans leading-relaxed whitespace-pre-wrap bg-zinc-50 border border-zinc-150 rounded-2xl p-6 flex-1 overflow-y-auto shadow-inner transition-all duration-300 h-[700px] pr-4 ${isB5 ? 'text-[15.5px] sm:text-[18px] font-normal text-zinc-850' : 'text-xs sm:text-sm font-light text-zinc-700'}`}>
                         {booklet.pages[currentPage].image && (
                           <div className="mb-6 overflow-hidden rounded-xl border border-zinc-200/80 shadow-sm max-h-[320px] bg-white">
                             <img 
@@ -2923,12 +2928,12 @@ export default function BookletDetailWindow({ booklet, onClose }: BookletDetailW
 
                     {/* Technical specifications checklist */}
                     <div className="mt-6 pt-4 border-t border-zinc-100 shrink-0">
-                      <span className="block font-mono text-[9px] text-zinc-400 tracking-widest uppercase mb-2 font-black">
+                      <span className={`block font-mono tracking-widest uppercase mb-2 font-black transition-all duration-300 ${isB5 ? 'text-[12px] text-rose-600' : 'text-[9px] text-zinc-400'}`}>
                         Technical Specifications
                       </span>
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                         {booklet.specifications.slice(0, 4).map((spec, i) => (
-                          <div key={i} className="flex justify-between items-center text-[11px] border-b border-zinc-50 pb-1">
+                          <div key={i} className={`flex justify-between items-center border-b border-zinc-50 pb-1 transition-all duration-300 ${isB5 ? 'text-[14px]' : 'text-[11px]'}`}>
                             <span className="font-sans text-zinc-450">{spec.label}</span>
                             <span className="font-mono font-bold text-zinc-750">{spec.value}</span>
                           </div>
